@@ -39,14 +39,14 @@
 <div class="cell padding20 colspan3 bg-white">
   <h3 class="text-dark">Video playlist</h3>
   <hr class="thin bg-grayLighter">
-<div class="" style="overflow-y: scroll; height:720px;width:430px;  cursor:pointer">
+<div class="" style="overflow-y: scroll;overflow-x:hidden; height:750px;width:430px;  cursor:pointer">
    <ul class="list-group" style="height:30px;width:500px;">
     <li class="list-group-item list" *ngFor="let video of videos;" [class.selected]="video === selectedVideo" (click)="onSelect(video)">
       <div class="mdl-card__title mdl-card--expand" [ngStyle]="{'background': '#000 url(' + video.thumbnailUrl + ') center center no-repeat', 'background-size': '125%'}">
         <div class="video-info-block">
         </div>
           <div style= "height:10px;width:200px; cursor:pointer">
-            <h6 class="text-light">{{video.videoTitle}}</h6>
+            <h6 class="text-light" style="font-weight:bold;">{{video.videoTitle}}</h6>
           </div>
           <div class="box" style= "margin-bottom:5em;margin-top:5em; cursor:pointer" align="center">
             <a class="play-btn" (click)="showVideo(video.url)"></a>
