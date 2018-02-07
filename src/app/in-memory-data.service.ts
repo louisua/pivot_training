@@ -20,27 +20,38 @@ export class InMemoryDataService implements InMemoryDbService {
     const videos = [
       {
         id: 0,
-        url: 'https://www.youtube.com/watch?v=9wg3v-01yKQ',
-        videoTitle : "Harry Styles - Kiwi"
+        url: 'https://www.youtube.com/watch?v=0eiSO09zrRk',
+        thumbnailUrl: 'http://img.youtube.com/vi/0eiSO09zrRk/hqdefault.jpg',
+        videoTitle : "The PIVOT Anthem: Advancing Health as a Human Right in Madagascar"
       },
       {
         id: 1,
-        url: 'https://www.youtube.com/watch?v=2Vv-BfVoq4g',
-        videoTitle : "Ed Sheeran - Perfect (Official Music Video)"
+        url: 'https://www.youtube.com/watch?v=9wg3v-01yKQ',
+        thumbnailUrl: 'http://img.youtube.com/vi/9wg3v-01yKQ/hqdefault.jpg',
+        videoTitle : "Harry Styles - Kiwi"
       },
       {
         id: 2,
-        url: 'https://www.youtube.com/watch?v=vQ3XgMKAgxc',
-        videoTitle : "Avicii - Lonely Together ft. Rita Ora"
+        url: 'https://www.youtube.com/watch?v=2Vv-BfVoq4g',
+        thumbnailUrl: 'http://img.youtube.com/vi/2Vv-BfVoq4g/hqdefault.jpg',
+        videoTitle : "Ed Sheeran - Perfect (Official Music Video)"
       },
       {
         id: 3,
-        url: 'https://www.youtube.com/watch?v=tVKaN_H35xs',
-        videoTitle : "DADJU - Reine (Clip Officiel)"
+        url: 'https://www.youtube.com/watch?v=vQ3XgMKAgxc',
+        thumbnailUrl: 'http://img.youtube.com/vi/vQ3XgMKAgxc/hqdefault.jpg',
+        videoTitle : "Avicii - Lonely Together ft. Rita Ora"
       },
       {
         id: 4,
+        url: 'https://www.youtube.com/watch?v=tVKaN_H35xs',
+        thumbnailUrl: 'http://img.youtube.com/vi/tVKaN_H35xs/hqdefault.jpg',
+        videoTitle : "DADJU - Reine (Clip Officiel)"
+      },
+      {
+        id: 5,
         url: 'https://www.youtube.com/watch?v=z_4EIsrAuuA',
+        thumbnailUrl: 'http://img.youtube.com/vi/z_4EIsrAuuA/hqdefault.jpg',
         videoTitle : "DADJU - Ma Fierté ft. Maître Gims, Alonzo (Clip Officiel)"
       },
     ];

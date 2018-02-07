@@ -1,7 +1,8 @@
 export class Video {
   id: number;
   url: string;
-  videoTitle: string;
+  heure: string;
+  title:string;
+  thumbnailurl:string;
+
 }
-
-

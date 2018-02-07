@@ -36,14 +36,16 @@
       ],
       "scripts": [
         "../node_modules/metro-ui/build/js/metro.min.js",
-        "../node_modules/metro-ui/build/js/metro.js",
-        "../node_modules/metro-ui/docs/js/select2.min.js",
-        "../node_modules/metro-ui/docs/js/docs.js",
-        "../node_modules/metro-ui/docs/js/metro.js",
-        "../node_modules/metro-ui/docs/js/jquery-2.1.3.min.js",
-        "../node_modules/metro-ui/docs/js/jquery.dataTables.min.js",
-        "../node_modules/metro-ui/docs/js/ga.js",
-        "../node_modules/metro-ui/js/widgets/dropdown.js"
+       "../node_modules/metro-ui/build/js/metro.js",
+       "../node_modules/metro-ui/docs/js/select2.min.js",
+       "../node_modules/metro-ui/docs/js/docs.js",
+       "../node_modules/metro-ui/docs/js/metro.js",
+       "../node_modules/metro-ui/docs/js/jquery-2.1.3.min.js",
+       "../node_modules/metro-ui/docs/js/jquery.dataTables.min.js",
+       "../node_modules/metro-ui/docs/js/ga.js",
+       "../node_modules/metro-ui/js/widgets/dropdown.js",
+        "../node_modules/jquery/dist/jquery.min.js",
+        "../node_modules/bootstrap/dist/js/bootstrap.min.js"
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {

@@ -1,0 +1,21 @@
+Pivot\VideoBundle\Entity\User:
+    type: entity
+    table: null
+    repositoryClass: Pivot\VideoBundle\Repository\UserRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: 255
+        firstname:
+            type: string
+            length: 255
+        adresse:
+            type: string
+            length: 255
+    lifecycleCallbacks: {  }

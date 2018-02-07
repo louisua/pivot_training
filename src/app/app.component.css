@@ -1,9 +1,33 @@
-.test{
-  margin-left:1em;
+.content {
+  position: fixed;
 }
-.container{
-  margin-right:1em;
+
+ul {
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background-color: transparent;
+    height: 100%;
+    overflow: auto;
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0 , .1);
 }
-.menu-title{
-font-size: 17;
-}
+
+li {
+   cursor: pointer;
+   position: relative;
+   left: 0;
+   background-color: #f4003d;
+   margin: .5em;
+   padding: .3em 0;
+   height: 1.6em;
+   border-radius: 4px;
+ }
+
+ li:hover {
+    color: white;
+    background-color: #f2597f;
+    left: .1em;
+  }

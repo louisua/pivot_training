@@ -1,5 +1,5 @@
-
-  <ul class="sidebarservices">
+<div align="center" style="margin-right:20em;">
+  <ul class="sidebarservices" style="margin-right:20em;">
         <li class="head">My urgent Todo List</li>
         <li class="content"  *ngFor="let todo of todolist " (click)="openModal(template)"><span>{{todo.name}} ---> {{todo.time}}</span>
           <ng-template #template>
@@ -13,6 +13,12 @@
                   <div class="modal-body" align="center">
                     <app-todo-list-detail [todo]="todo"></app-todo-list-detail>
                   </div>
+                  <div class="modal-foot" align="center" style="margin-bottom:2em;">
+                    <button type="button" class="button success" (click)="modalRef.hide()">
+                        <span class="mif-checkmark"></span>Save
+                    </button>
+                </div>
                 </ng-template>
         </li>
  </ul>
+ </div>

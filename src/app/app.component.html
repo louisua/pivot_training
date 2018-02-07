@@ -1,22 +1,42 @@
-<div class="grid">
-      <div class="row cells4">
-          <div class="cell">
-            <ul class="sidebar2 dark">
-                <li routerLink="/player" class="stick bg-red"><a><span class="mif-home icon"></span>Player</a></li>
-                <li class="divider"></li>
-                <li routerLink="/todolist" class="stick bg-green" style="cursor:pointer"><a class="dropdown-toggle"> <span class="mif-cog icon"></span> Todo List</a></li>
-                <ul class="d-menu" data-role="dropdown">
-                  <li><a href="#">Коллеги</a></li>
-                  <li><a href="#">Интересно</a></li>
-                </ul>
-                <li class="divider"></li>
-                <li routerLink="/calculator" style="cursor:pointer" class="" ><a><span class="mif-home icon"></span> Calculator</a></li>
-                <li class="divider"></li>
+
+
+<body >
+
+<div class="page-content">
+<div class="flex-grid no-responsive-future" style="height: 100%; margin-left:1.5em;">
+    <div class="row " style="height: 100%">
+      <div class="cell size-x200" style="height: 100%">
+          <div dropdown>
+              <ul class="sidebar2 green" >
+                <li routerLink="/player" style="cursor:pointer" class="stick bg-green">
+                  <a>
+                    <span class="mif-youtube-play icon"></span>
+                    <span class="title">Player</span>
+                  </a>
+                </li>
+
+                <li  style="cursor:pointer" class="stick bg-red">
+                  <a dropdownToggle class="dropdown-toggle" ><span class="mif-tree icon"></span>Todo List</a>
+                  <ul *dropdownMenu class="dropdown-menu dropdown-menu-right" role="menu">
+                    <li role="menuitem"><a routerLink="/todolist/TaskDashboard"><span class="mif-apps icon"></span>Dash board</a></li>
+                    <li role="menuitem"><a routerLink="/todolist/TaskList"><span class="mif-apps icon"></span>Task list</a></li>
+                  </ul>
+                </li>
+
+                <li routerLink="/calculator" style="cursor:pointer" class="stick bg-blue">
+                  <a>
+                    <span class="mif-calculator icon"></span>
+                    <span class="title">Calculator</span>
+                  </a>
+                </li>
               </ul>
           </div>
-        <div class="cell colspan3">
-            <router-outlet></router-outlet>
         </div>
 
-      </div>
+  <div class="cell auto-size padding20 bg-white">
+    <router-outlet></router-outlet>
+  </div>
 </div>
+</div>
+</div>
+</body>

@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
-import { Headers, Http } from '@angular/http';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Headers,Response, Http ,RequestOptions} from '@angular/http';
+import { HttpClient, HttpHeaders} from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/toPromise';
+import 'rxjs/add/operator/map';
 import { Video } from './video';
 
 let _window: any = window;
@@ -12,16 +13,17 @@ const httpOptions = {headers : new HttpHeaders({'Content-Type': 'application/jso
 export class YoutubePlayerService {
 	public yt_player;
 	private videosUrl = 'api/videos';  // URL to web api
+	private videoUrl='http://localhost:8000/api/';
 	private currentVideoId: string;
 
-	 constructor(private http: HttpClient) { }
+	 constructor(private http: HttpClient,private _http:Http) { }
 
 	 createPlayer(): void {
 	     let interval = setInterval(() => {
 	       if ((typeof _window.YT !== 'undefined') && _window.YT && _window.YT.Player) {
 	         this.yt_player = new _window.YT.Player('ytb-player', {
-	           width: '800',
-	           height: '400',
+	           width: '1150',
+	           height: '565',
 						 //videoId: videoId,
 	           playerVars: {
 	             iv_load_policy: '3',
@@ -38,22 +40,45 @@ export class YoutubePlayerService {
 	     this.currentVideoId = videoId;
 	   }
 
-  getVideos(): Observable<Video[]> {
-    return this.http.get<Video[]>(this.videosUrl);
+  getVideos() {
+		return this._http.get(this.videoUrl).map((res)=>res.json());
   }
 
-	addVideo (video: Video): Observable<Video>{
-		return this.http.post<Video>(this.videosUrl, video, httpOptions);
+	addVideo (video: Video){
+		const data = JSON.stringify(video);
+		return this._http.post('http://localhost:8000/api/add', data);
 	}
 
-	updateVideo (video: Video): Observable<any>{
-	  return this.http.put(this.videosUrl, video, httpOptions);
-	}
+ updateVideo (video:Video,id){
+	 const data = JSON.stringify(video);
+	 return this._http.put('http://localhost:8000/api/edit/'+id, data);
+ }
 
-	deleteVideo (video: Video | number): Observable<Video> {
+	// updateVideo (video: Video): Observable<any>{
+	// 	const id = typeof video === 'number' ? video : video.id;
+	// 	const data = JSON.stringify(video);
+	// 	let cpHeaders = new Headers({ 'Content-Type': 'application/json' });
+  //       let options = new RequestOptions({ headers: cpHeaders ,
+	// 			});
+  //       return this._http.put(this.videoUrl +"edit/"+ id, data, options).map(success => success.status)
+  //
+	//   //return this.http.put(this.videosUrl, video, httpOptions);
+	// }
+	
+	deleteVideo (video: Video | number): Observable<number> {
 		const id = typeof video === 'number' ? video : video.id;
-		const url = `${this.videosUrl}/${id}`;
-		return this.http.delete<Video>(url, httpOptions);
-	}
+		let cpHeaders = new Headers({ 'Content-Type': 'application/json' });
+	  let options = new RequestOptions({
+			headers: cpHeaders,
+			body: {
+								id:id
+			}
+		});
+	  return this._http.delete(this.videoUrl +"delete/"+ id).map((success:Response) => success.status);
+}
+private handleError (error: Response | any) {
+	console.error(error.message || error);
+	return Observable.throw(error.status);
+    }
 
 }
