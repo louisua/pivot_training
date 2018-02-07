@@ -1,0 +1,7 @@
+services:
+    pivot_video.service:
+        class: Pivot\VideoBundle\Service\VideoService
+        arguments: [ "@doctrine.orm.entity_manager" ]
+    
+    pivot_video.validate:
+        class: Pivot\VideoBundle\Service\Validate

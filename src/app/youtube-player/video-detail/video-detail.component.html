@@ -1,11 +1,20 @@
 <div *ngIf="video" class="grid">
 
+  <div class="flex-just-sb" >
+    <div class="cell ">
+      <h5>Video Id</h5>
+    </div>
+    <div class="cell input-control text full-size">
+      <input type="text" required [(ngModel)]="video.id" disabled #id/>
+    </div>
+  </div>
+
     <div class="flex-just-sb" >
       <div class="cell ">
         <h5>Video Title</h5>
       </div>
       <div class="cell input-control text full-size">
-        <input type="text" required [(ngModel)]="video.videoTitle" />
+        <input type="text" required [(ngModel)]="video.title" #title/>
       </div>
     </div>
 
@@ -16,9 +25,35 @@
         <h5 >Video url</h5>
       </div>
       <div class="cell input-control text full-size">
-        <input type="text" required [(ngModel)]="video.url" />
+        <input type="text" required [(ngModel)]="video.url" #url/>
       </div>
     </div>
 
-    <!--<button class="save" (click)="save()">save</button>-->
+    <hr class="thin bg-grayLighter">
+
+    <div class="flex-just-sb" >
+      <div class="cell ">
+        <h5 >Video heure</h5>
+      </div>
+      <div class="cell input-control text full-size">
+        <input type="text" required [(ngModel)]="video.heure" disabled #heure />
+      </div>
+    </div>
+
+<hr class="thin bg-grayLighter">
+
+    <div class="flex-just-sb" >
+      <div class="cell ">
+        <h5 >Video ThumbnailUrl</h5>
+      </div>
+      <div class="cell input-control text full-size">
+        <input type="text" required [(ngModel)]="video.thumbnailurl" #thumbnailurl/>
+      </div>
+    </div>
+
+    <div class="modal-foot" align="center" style="margin-bottom:2em;">
+      <button type="button" class="button success" (click)="updateVideo(id.value,title.value,url.value,heure.value,thumbnailurl.value)">
+          <span class="mif-checkmark"></span>Save
+      </button>
+  </div>
 </div>

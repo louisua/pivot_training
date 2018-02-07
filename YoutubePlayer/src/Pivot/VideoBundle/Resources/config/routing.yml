@@ -1,0 +1,30 @@
+pivot_video_homepage:
+    path:     /
+    defaults: { _controller: PivotVideoBundle:Video:index }
+    
+pivot_video_history:
+    path:    /history/{id}
+    defaults: { _controller: PivotVideoBundle:Video:show }
+    requirements:
+        id: \d+
+    
+pivot_video_add:
+    path:    /add
+    defaults: { _controller: PivotVideoBundle:Video:add }
+
+pivot_video_historyhour:
+    path:    /historyHour
+    defaults: { _controller: PivotVideoBundle:Video:GetByHour }
+    
+pivot_video_delete:
+    path:    /delete/{id}
+    defaults: { _controller: PivotVideoBundle:Video:delete }
+    requirements:
+        id: \d+
+        
+    
+pivot_video_edit:
+    path:    /edit/{id}
+    defaults: { _controller: PivotVideoBundle:Video:edit }
+    requirements:
+        id: \d+

@@ -1,0 +1,23 @@
+Pivot\VideoBundle\Entity\Video:
+    type: entity
+    table: null
+    repositoryClass: Pivot\VideoBundle\Repository\VideoRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        title:
+            type: string
+            length: 255
+        url:
+            type: string
+            length: 255
+        heure:
+            type: time
+        thumbnailurl:
+            type: string
+            length: 255
+    lifecycleCallbacks: {  }
